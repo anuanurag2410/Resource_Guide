@@ -60,4 +60,49 @@ source_df.createOrReplaceTempView("customer_updates")
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC ### QUESTION 2 — THOUSANDS OF SMALL FILES
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC OPTIMIZE Customers
+# MAGIC
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC VACUUM --> Remove OlD file 
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ### Accidenlly delteted data 
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC _Time Travel_
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC DESCRIBE HISTORY Customers
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC RESTORE TABLE Customers TO VERSION AS OF 1 
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC DESCRIBE HISTORY Customers
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
 
